@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实战的导航</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style type="text/css">
+    	.c_arrow{
+    		font-size: 100px;
+    		/*line-height: 655.5px;*/
+
+    	}
+    </style>
+</head>
+<body>
+	<nav class=" navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="" class="navbar-brand" style="padding:4px 0 0 15px">
+					<img src="img/1.jpg"  width="40px" height="40px" alt="logo"></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse"><span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+			
+			</div>
+			<div class="collapse navbar-collapse"  id="nav-collapse" >
+				<ul class=" nav navbar-nav navbar-right" style="margin-top:0">
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+					<li><a href=""><span class="glyphicon glyphicon-list-alt"></span> 产品</a></li>
+					<li><a href=""><span class="glyphicon glyphicon-comment"></span> 咨询</a></li>
+					<li><a href=""><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	</nav>
+	<div class="container">
+		<div id="myCarousel" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item  active">
+					<img src="img/4.jpg" alt="fate" width="100%">
+				</div>
+				<div class="item">
+					<img src="img/5.jpg" alt="fate" width="100%">
+				</div>
+				<div class="item">
+					<img src="img/6.jpg" alt="fate" width="100%">
+				</div>
+			</div>
+			<a href="#myCarousel" data-slide="prev" class="carousel-control left c_arrow">&lsaquo;</a>
+			<a href="#myCarousel" class="carousel-control right c_arrow " data-slide="next">&rsaquo;</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		let arrow_height= $(".item img").height()+"px"
+    		$(".c_arrow").css('line-height',arrow_height);
+    		// $(".item img").click(function(){
+    		// 	let arrow_height= $(".item img").height()+"px"
+    		// 	console.log(arrow_height)
+    		// })
+    		
+
+
+    		$(window).resize(function(){
+    			let arrow = $(".item img").eq(0).height()|| 
+    					$(".item img").eq(1).height()||
+    					 $(".item img").eq(2).height();
+    			console.log(arrow)
+    				
+    			$(".c_arrow").css('line-height',arrow+'px')
+    		})
+    		$("#myCarousel").carousel({
+    			interval:2000,
+    		});
+    		
+    		
+    		
+    		
+
+    	})
+    </script>
+</body>
+</html>

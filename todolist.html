@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>todolist</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+    .btn_nav{
+      padding:0 10px;
+    }
+    .del{
+      text-decoration:line-through; 
+      color:#ccc;
+    }
+
+  </style>
+</head>
+<body>
+<div id="app">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a href="" class="navbar-brand">ToDoList</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1 class="text-danger">亲，您还有{{count}}项事未完成</h1>
+    <form class="form">
+      <input type="text"  class="form-control" name="" v-model="title" @keyup.65= "add"><br>
+      
+      
+      <ul class="nav nav-pills ">
+        <li  ><button class="btn btn-default" :class="{active:hash === 'all'}"><a href="#/all">全部任务</a></button></li>
+        <li class="btn_nav " ><button class="btn btn-default" :class="{active:hash === 'finish'}"><a href="#/finish">已完成</a></button></li>
+        <li  ><button class="btn btn-default"><a href="#/unfinish" :class="{active:hash === 'unfinish'}">未完成</a></button></li>
+        
+      </ul><br>
+      
+        
+     <ul class="list-group">
+       <li class="list-group-item  " :class="{del:todo.isSelect}" v-for="todo in filterTodos " @dblclick="remember(todo)" @blur="cancel()"  @keyup.65 = "cancel()" v-focus="cur==todo" >
+          <input type="checkbox" v-model="todo.isSelect" name="" > 
+         
+          <span v-show="cur != todo" >
+            {{todo.title }}
+          </span>
+          
+          <input type="text" name="" v-model="todo.title" v-show="cur == todo">
+          <span class="close" @click = "close(todo)" >&times;</span>
+       </li>
+     </ul>
+      
+       
+
+    
+    </div>
+
+    </form>
+  </div>
+</div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="vue/dist/vue.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js">
+    
+  </script>
+  <script type="text/javascript" src="todo.js" >
+  
+  </script>
+</body>
+</html>

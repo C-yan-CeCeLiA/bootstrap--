@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body style="margin: 200px"> 
+	<button class="btn btn-primary"  data-target="#demo">可折叠组件</button>
+	<div class="well collapse in" id="demo">
+		bootsrap
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(".btn").on("click",function(){
+			$("#demo").collapse('toggle')
+		})
+		$("#demo").on("show.bs.collapse",function(){
+			alert("在show方法执行前")
+		})
+		$("#demo").on("shown.bs.collapse",function(){
+			alert("在show方法执行后")
+		})
+		$("#demo").on("hide.bs.collapse",function(){
+			alert("在折叠区隐藏前")
+		})
+		$("#demo").on("hidden.bs.collapse",function(){
+			alert("在折叠区隐藏后")
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按钮插件</title>
+	
+	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<!-- <button class="btn btn-default" data-toggle="button" autocomplete="off">按钮
+		
+	</button>
+	<div class="btn-group" data-toggle="buttons">
+		<label for="" class="btn btn-primary active" >
+			<input type="radio" name="sex" checked="">男
+		</label>
+		<label for=""  class="btn btn-primary">
+			<input type="radio" name="sex" >女
+		</label>
+
+	</div> -->
+	<!-- <div class="btn-group" data-toggle="buttons">
+		<label for="" class="btn btn-primary active">
+			<input type="checkbox" name="fa" checked="" value="体育">体育
+		</label>
+		<label for="" class="btn btn-primary">
+			<input type="checkbox" name="fa" value="网球">网球
+		</label>
+		<label for="" class="btn btn-primary">
+			<input type="checkbox" name="fa" value="足球">足球
+		</label>
+		<label for="" class="btn btn-primary">
+			<input type="checkbox" name="fa" value="篮球">篮球
+		</label>
+	</div> -->
+	<button class="btn btn-primary" data-loading-text="loading……" autocomlete="off">开始上传</button>
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+ 	<script type="text/javascript">
+ 		$(".btn").on("click",function(){
+ 			// let btn = $(this).button("loading");
+ 			// setTimeout(function(){
+ 			// 	btn.button("reset")
+ 			// },1000)
+ 			$(this).button("toggle")
+ 		})
+ 	</script>
+</body>
+</html>

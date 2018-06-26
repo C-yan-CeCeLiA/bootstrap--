@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>标示符</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body style="margin: 200px">
+<!-- <a href="#" 
+	data-toggle="tooltip" 
+	data-animation="false" 
+	data-html="true"
+	data-placement="bottom"
+	data-trigger = "hover focus"
+	data-delay="1000"
+	id="link" title="<b>超文本标示符</b>">
+HTML</a> -->
+<a href="#" data-toggle="tooltip" id="link" title="超文本标示符">HTML</a>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+  	$("#link").tooltip({
+  		delay:{
+  			show:500,
+  			hide:100,
+  		}
+  	});
+  	
+  </script>
+</body>
+</html>

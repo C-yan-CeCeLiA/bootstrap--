@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模态框插件</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="modal fade " id="myModal" tabindex="-1">
+		<div class="modal-dialog ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal"><span>&times;</span></button>
+					<h3 class="modal-title">我是个标题</h3>
+				</div>
+				<div class="modal-body">
+					
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-4">1</div>
+							<div class="col-md-4">2</div>
+							<div class="col-md-4">3</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default">
+						注册
+					</button>
+					<button class="btn btn-primary">登陆</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<button class="btn btn-primary btn-lg" id="btn" ><!-- data-toggle="modal" data-target="#myModal" --> 
+		登陆
+	</button>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+  	$("#btn").on("click",function(){
+  		$("#myModal").modal('show');
+  	})
+  	$("#myModal").modal({
+  		show:false,
+  		// rotate:"content.html"
+  	});
+  	$("#myModal").on("show.bs.modal",function(){
+  		alert("在show方法执行前调用");
+  	})
+  	$("#myModal").on("shown.bs.modal",function(){
+  		alert("在show方法执行后调用");
+  	})
+  	$("#myModal").on("hide.bs.modal",function(){
+  		alert("在hide方法执行前调用");
+  	})
+  	$("#myModal").on("hidden.bs.modal",function(){
+  		alert("在hide方法执行后调用");
+  	})
+  	$("#myModal").on("hide.bs.modal",function(){
+  		alert("在hide方法执行前调用");
+  	})
+
+  </script>
+</body>
+</html>
